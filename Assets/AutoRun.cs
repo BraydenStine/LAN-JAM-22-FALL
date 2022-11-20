@@ -9,7 +9,14 @@ public class AutoRun : MonoBehaviour
     [SerializeField] private PlayerMovement pm;
     
 
-    private void OnTriggerEnter(Collider other)
+
+
+    private void FixedUpdate()
+    {
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         pm.SwapDirection();
     }
