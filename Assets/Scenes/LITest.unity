@@ -781,58 +781,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 856322829, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1020604800626096505, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1020604800626096505, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1020604800626096505, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1020604800626096505, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845022973739496542, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845022973739496542, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845022973739496542, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845022973739496542, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4539551186860155997, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4539551186860155997, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4539551186860155997, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4539551186860155997, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4638593956776108611, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -877,32 +825,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4638593956776108621, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: direction
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638593956776108621, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: DetectionDistance
-      value: 0.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638593956776108621, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: ignoreLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 4638593956776108622, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4638593956776108622, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8483593186176976508, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2521427799760714965, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
 --- !u!1 &1118491946
 GameObject:
