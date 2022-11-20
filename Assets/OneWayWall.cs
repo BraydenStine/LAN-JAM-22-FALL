@@ -6,7 +6,7 @@ using UnityEngine;
 public class OneWayWall : MonoBehaviour
 {
     private PlayerMovement pm;
-    private int orientation;
+    [SerializeField] int orientation;
 
     private void Awake()
     {
