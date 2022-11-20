@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Square
+  m_Name: floor_right
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 7482667652216324306, guid: 586f59bbd1d126f47b12aa6a7788e5da, type: 3}
-  m_Color: {r: 0.58431375, g: 0.41960785, b: 0.47058824, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2ab5ea0591dc9a24294a7c92ce299961, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0
