@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class Pot : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Pot : MonoBehaviour
     [SerializeField, Range(0.5f, 1f)] private float delayTime;
     private PlayerMovement pm;
     private Rigidbody2D body;
+    private AudioSource audio;
     private bool breakable = false;
     public Sprite _breakSprite;
     public SpriteRenderer _Renderer;
@@ -19,6 +21,7 @@ public class Pot : MonoBehaviour
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+        audio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -44,6 +47,8 @@ public class Pot : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
         _collider.enabled = true;
         breakable = true;
+        audio.pitch = Random.Range(0.8f, 1.2f);
+        audio.Play();
         _Renderer.sprite = _breakSprite;
         key.SetActive(true);
         yield return new WaitForSeconds(1f);
