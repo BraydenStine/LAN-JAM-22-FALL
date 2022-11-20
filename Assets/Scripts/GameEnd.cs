@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class GameEnd : MonoBehaviour
 {
-    public GameObject Hand;
+    public GameObject BEEZ;
+
+    public PlayerStats Health;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            Hand.SetActive(true);
+            BEEZ.SetActive(true);
+            Health.CurrentHealth = -1;
         }
     }
 }
