@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D _box;
     PlayerStats _stats;
 
+    [SerializeField] private bool Control = false;
+    [SerializeField] private LayerMask ignoreLayer;
+    [SerializeField,Range(0.51f,1)] private float DetectionDistance = 0.51f;
     [SerializeField]
     float moveSpeed = 6f;
     [SerializeField]
@@ -23,6 +27,13 @@ public class PlayerMovement : MonoBehaviour
     bool grounded = false;
     bool isJumping = false;
 
+    [SerializeField, Range(-1, 1)] private int direction;
+
+    public void SwapDirection()
+    {
+        direction *= -1;
+    }
+    
 
     float directionX = 0f;
     float directionY = 0f;
@@ -37,14 +48,11 @@ public class PlayerMovement : MonoBehaviour
         _body = GetComponent<Rigidbody2D>();
         _box = GetComponent<BoxCollider2D>();
         _rend = GetComponentInChildren<SpriteRenderer>();
-        _stats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_stats.CurrentHealth <= 0) return;
-
         directionY = _body.velocity.y;
         if (grounded && Input.GetButtonDown("Jump"))
         {
@@ -69,14 +77,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_stats.CurrentHealth <= 0)
+        if (Control)
         {
-            _body.velocity = new Vector2();
-            return;
+            directionX = Input.GetAxis("Horizontal") * Time.deltaTime * 100f;
+        }
+        else
+        {
+            directionX = direction * Time.deltaTime * 100f;
         }
 
-        directionX = Input.GetAxis("Horizontal") * Time.deltaTime * 100f;
-
+        
 
         //checks direction to get the player to flip
         if (directionX < 0)
@@ -89,15 +99,30 @@ public class PlayerMovement : MonoBehaviour
         Vector3 max = _box.bounds.max;
         Vector3 min = _box.bounds.min;
         Vector2 corner1 = new Vector2(max.x-0.2f, min.y-0.1f);
-        Vector2 corner2 = new Vector2(min.x-0.2f, min.y-0.2f);
+        Vector2 corner2 = new Vector2(min.x+0.2f, min.y-0.2f);
+
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2);
 
+        var hitL = Physics2D.Raycast(_box.bounds.center, Vector2.left, DetectionDistance,~ignoreLayer);
+        var hitR = Physics2D.Raycast(_box.bounds.center, Vector2.right, DetectionDistance,~ignoreLayer);
+
+        
+        
+        //Collider2D hitL = Physics2D.OverlapArea(corner3, corner4);
+        //Collider2D hitR = Physics2D.OverlapArea(corner5, corner6);
+
+        
         grounded = false;
 
         //if the box was able to collide whit anything, its grounded
         if (hit)
         {
             grounded = true;
+        }
+
+        if ((hitL && direction <0 )|| (hitR && direction>0 ))
+        {
+            SwapDirection();
         }
 
         if (grounded) //can move normally on the ground
