@@ -9467,6 +9467,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4638593956776108621, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
+      propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638593956776108621, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
       propertyPath: RestartPos
       value: 
       objectReference: {fileID: 202651158}
@@ -9951,7 +9955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6883713766444912649, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
       propertyPath: m_Size.y
-      value: 0.79
+      value: 0.98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 555157e4149c63840a6fe2c9ce16501a, type: 3}
