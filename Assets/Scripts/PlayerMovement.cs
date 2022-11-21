@@ -95,6 +95,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Player.transform.position = RestartPos.transform.position;
         }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void FixedUpdate()
