@@ -10,6 +10,13 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D _box;
     PlayerStats _stats;
 
+    //Added by Brayden. Audio Stuff. Sorry for the mess, Li.
+    public AudioSource AS;
+    public AudioClip Bonk;
+    public AudioClip Meow;
+    public GameObject RestartPos;
+    public GameObject Player;
+
     [Header("AutoControls")]
     [SerializeField] private bool Control = false;
 
@@ -34,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         if (SwapActive)
         {
             direction *= -1;
+            //Added by Brayden
+            AS.PlayOneShot(Bonk);
         }
             
     }
@@ -63,6 +72,9 @@ public class PlayerMovement : MonoBehaviour
             jumpTimeCounter = jumpTime;
 
             directionY = jumpForce;
+
+            //Added by Brayden
+            AS.PlayOneShot(Meow);
         }
         else if (isJumping && Input.GetButton("Jump"))
         {
@@ -77,6 +89,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonUp("Jump"))
             isJumping = false;
+
+        //Added by Brayden
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Player.transform.position = RestartPos.transform.position;
+        }
     }
 
     private void FixedUpdate()
