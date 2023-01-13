@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -93,6 +96,11 @@ public class PlayerMovement : MonoBehaviour
         //Added by Brayden
         if(Input.GetKeyDown(KeyCode.R))
         {
+            if(Input.GetKey(KeyCode.LeftShift))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                return;
+            }
             Player.transform.position = RestartPos.transform.position;
         }
         if(Input.GetKeyDown(KeyCode.Escape))
